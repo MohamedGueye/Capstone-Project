@@ -1,0 +1,22 @@
+<div class="row h-100">
+    <div class="d-none d-md-block col-xl-auto col-lg-auto col-md-auto col-sm-0">
+        <h1>Table of Contents</h1>
+    </div>
+
+    <div class="h-100 scroll-container col">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                <app-stocks [customerDetails]="customerDetails"></app-stocks>
+                <br>
+                <app-real-estate [customerDetails]="customerDetails"></app-real-estate>
+                <br>
+                <app-commodities [customerDetails]="customerDetails"></app-commodities>
+                <br>
+                <app-businesses [customerDetails]="customerDetails"></app-businesses>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5">
+                <app-beneficiary></app-beneficiary>
+            </div>
+        </div>
+    </div>
+</div>

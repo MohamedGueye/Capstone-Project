@@ -1,0 +1,22 @@
+.input-icon:not(.input-icon-right) .form-control-lg~.icon {
+    left: 1rem;
+}
+
+.input-icon .icon {
+    position: absolute;
+    color: #889aa4;
+    pointer-events: none;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon-lg {
+    width: 1.3334rem;
+    height: 1.3334rem;
+}
+
+.icon {
+    vertical-align: middle;
+    fill: currentColor;
+}

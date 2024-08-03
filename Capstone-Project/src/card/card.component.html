@@ -1,0 +1,13 @@
+<div class="card rounded-0 border">
+    <div class="card-header">
+        <h5 class="card-title">
+            <ng-content select="[title]"></ng-content>
+        </h5>
+        <div class="card-actions d-flex align-items-center ml-auto">
+            <ng-content select="[actions]"></ng-content>
+        </div>
+        <div class="card-body pt-4">
+            <ng-content select="[content]"></ng-content>
+        </div>
+    </div>
+</div>
