@@ -9,7 +9,7 @@ export class PrimaryBeneficiaryDetailsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  retrieveBeneficiaryDetails = (accountNumber: string) => {
+  retrievePrimaryBeneficiaryDetails = (accountNumber: string) => {
     const formattedAccountNumber = accountNumber.replace(/-|\s/g, '');
     const url = `http://localhost:8080/primaryBeneficiary/${formattedAccountNumber}`
 

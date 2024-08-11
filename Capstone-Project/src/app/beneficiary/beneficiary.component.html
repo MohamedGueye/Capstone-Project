@@ -3,6 +3,14 @@
       Beneficiaries
     </div>
     <div class="card-body">
+        <p class="text-muted fw-bold pb-3 small">
+            Status: {{ primaryBeneficiary?.beneStatus }}
+        </p>
+        <section class="pb-2 mb-4">
+            <h2 class="h6 mb-3 py-2 text-uppercase text-primary">
+                Primary Beneficiary
+            </h2>
+        </section>
       <table aria-label="Beneficiaries" class="mt-3 mb-0 w-100">
         <tbody>
             <tr>
@@ -19,6 +27,14 @@
                 </th>
                 <th class="fw-bold pl-3">
                     {{ primaryBeneficiary?.dob }}
+                </th>
+            </tr>
+            <tr>
+                <th class="fw-normal w-50">
+                    Relationship
+                </th>
+                <th class="fw-bold pl-3">
+                    {{ primaryBeneficiary?.relationship }}
                 </th>
             </tr>
             <tr>
@@ -43,6 +59,66 @@
                 </th>
                 <th class="fw-bold pl-3">
                     {{ primaryBeneficiary?.legalHeir }} 
+                </th>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-body">
+        <section class="pb-2 mb-4">
+            <h2 class="h6 mb-3 py-2 text-uppercase text-primary">
+                Contingent Beneficiary
+            </h2>
+        </section>
+      <table aria-label="Beneficiaries" class="mt-3 mb-0 w-100">
+        <tbody>
+            <tr>
+                <th class="fw-normal w-50">
+                    SSN
+                </th>
+                <th class="fw-bold pl-3">
+                    {{ contingentBeneficiary?.ssn }}
+                </th>
+            </tr>
+            <tr>
+                <th class="fw-normal w-50">
+                    Date of birth
+                </th>
+                <th class="fw-bold pl-3">
+                    {{ contingentBeneficiary?.dob }}
+                </th>
+            </tr>
+            <tr>
+                <th class="fw-normal w-50">
+                    Relationship
+                </th>
+                <th class="fw-bold pl-3">
+                    {{ contingentBeneficiary?.relationship }}
+                </th>
+            </tr>
+            <tr>
+                <th class="fw-normal w-50">
+                    Share %
+                </th>
+                <th class="fw-bold pl-3">
+                    {{ contingentBeneficiary?.sharePercentage }}
+                </th>
+            </tr>
+            <tr>
+                <th class="fw-normal w-50">
+                    Paid
+                </th>
+                <th class="fw-bolf pl-3">
+                    {{ contingentBeneficiary?.paid }}
+                </th>
+            </tr>
+            <tr>
+                <th class="fw-normal w-50">
+                    Legal Heir
+                </th>
+                <th class="fw-bold pl-3">
+                    {{ contingentBeneficiary?.legalHeir }} 
                 </th>
             </tr>
         </tbody>
