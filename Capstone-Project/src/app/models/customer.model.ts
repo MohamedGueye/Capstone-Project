@@ -14,4 +14,4 @@ export interface Customer {
     llcBusinesses: string | null;
     smallBusinesses: string | null;
     employees: string | null;
-  }
+}

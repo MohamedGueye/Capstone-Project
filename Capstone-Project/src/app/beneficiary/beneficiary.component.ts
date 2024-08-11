@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PrimaryBeneficiary } from '../models/primary-beneficiary.model';
 
 @Component({
   selector: 'app-beneficiary',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './beneficiary.component.scss'
 })
 export class BeneficiaryComponent {
-
+  @Input() primaryBeneficiary!: PrimaryBeneficiary | undefined;
 }
