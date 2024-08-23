@@ -10,7 +10,7 @@
                     LLC businesses
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.llcBusinesses }}
+                    {{ customerDetails?.llcBusinesses ? customerDetails?.llcBusinesses : '--' }}
                 </th>
             </tr>
             <tr>
@@ -18,7 +18,7 @@
                     Small businesses
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.smallBusinesses }}
+                    {{ customerDetails?.smallBusinesses ? customerDetails?.smallBusinesses : '--' }}
                 </th>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                     Employees
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.employees }}
+                    {{ customerDetails?.employees ? customerDetails?.employees : '--' }}
                 </th>
             </tr>
         </tbody>

@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
         <p class="text-muted fw-bold pb-3 small">
-            Status: {{ primaryBeneficiary?.beneStatus }}
+            Status: {{ primaryBeneficiary?.beneStatus ? primaryBeneficiary?.beneStatus : '--' }}
         </p>
         <section class="pb-2 mb-4">
             <h2 class="h6 mb-3 py-2 text-uppercase text-primary">
@@ -18,7 +18,7 @@
                     SSN
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ primaryBeneficiary?.ssn }}
+                    {{ primaryBeneficiary?.ssn ? primaryBeneficiary?.ssn : '--' }}
                 </th>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                     Date of birth
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ primaryBeneficiary?.dob }}
+                    {{ primaryBeneficiary?.dob ? primaryBeneficiary?.dob : '--' }}
                 </th>
             </tr>
             <tr>
@@ -34,7 +34,7 @@
                     Relationship
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ primaryBeneficiary?.relationship }}
+                    {{ primaryBeneficiary?.relationship ? primaryBeneficiary?.relationship : '--' }}
                 </th>
             </tr>
             <tr>
@@ -42,7 +42,7 @@
                     Share %
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ primaryBeneficiary?.sharePercentage }}
+                    {{ primaryBeneficiary?.sharePercentage ? primaryBeneficiary?.sharePercentage : '--' }}
                 </th>
             </tr>
             <tr>
@@ -50,7 +50,7 @@
                     Paid
                 </th>
                 <th class="fw-bolf pl-3">
-                    {{ primaryBeneficiary?.paid }}
+                    {{ primaryBeneficiary?.paid ? primaryBeneficiary?.paid : '--' }}
                 </th>
             </tr>
             <tr>
@@ -58,7 +58,7 @@
                     Legal Heir
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ primaryBeneficiary?.legalHeir }} 
+                    {{ primaryBeneficiary?.legalHeir ? primaryBeneficiary?.legalHeir : '--' }} 
                 </th>
             </tr>
         </tbody>
@@ -78,7 +78,7 @@
                     SSN
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ contingentBeneficiary?.ssn }}
+                    {{ contingentBeneficiary?.ssn ? contingentBeneficiary?.ssn : '--' }}
                 </th>
             </tr>
             <tr>
@@ -86,7 +86,7 @@
                     Date of birth
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ contingentBeneficiary?.dob }}
+                    {{ contingentBeneficiary?.dob ? contingentBeneficiary?.dob : '--' }}
                 </th>
             </tr>
             <tr>
@@ -94,7 +94,7 @@
                     Relationship
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ contingentBeneficiary?.relationship }}
+                    {{ contingentBeneficiary?.relationship ? contingentBeneficiary?.relationship : '--' }}
                 </th>
             </tr>
             <tr>
@@ -102,7 +102,7 @@
                     Share %
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ contingentBeneficiary?.sharePercentage }}
+                    {{ contingentBeneficiary?.sharePercentage ? contingentBeneficiary?.sharePercentage : '--' }}
                 </th>
             </tr>
             <tr>
@@ -110,7 +110,7 @@
                     Paid
                 </th>
                 <th class="fw-bolf pl-3">
-                    {{ contingentBeneficiary?.paid }}
+                    {{ contingentBeneficiary?.paid ? contingentBeneficiary?.paid : '--' }}
                 </th>
             </tr>
             <tr>
@@ -118,7 +118,7 @@
                     Legal Heir
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ contingentBeneficiary?.legalHeir }} 
+                    {{ contingentBeneficiary?.legalHeir ? contingentBeneficiary?.legalHeir : '--' }} 
                 </th>
             </tr>
         </tbody>

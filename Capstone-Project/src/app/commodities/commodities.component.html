@@ -10,7 +10,7 @@
                     Gold
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.gold }}
+                    {{ customerDetails?.gold ? customerDetails?.gold + ' Bar(s)' : '--' }}
                 </th>
             </tr>
             <tr>
@@ -18,7 +18,7 @@
                     Silver
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.silver }}
+                    {{ customerDetails?.silver ? customerDetails?.silver + ' Bar(s)' : '--' }}
                 </th>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                     Oil
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.oil }}
+                    {{ customerDetails?.oil ? customerDetails?.oil + ' Barrel(s)': '--' }}
                 </th>
             </tr>
             <tr>
@@ -34,7 +34,7 @@
                     Food
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.food }}
+                    {{ customerDetails?.food ? customerDetails?.food : '--' }}
                 </th>
             </tr>
         </tbody>

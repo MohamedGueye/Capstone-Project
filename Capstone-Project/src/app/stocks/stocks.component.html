@@ -18,7 +18,7 @@
                     Price
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.price }}
+                    {{ customerDetails?.price ? customerDetails?.price : '--' }}
                 </th>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                     Quantity
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.quantity }}
+                    {{ customerDetails?.quantity ? customerDetails?.quantity : '--' }}
                 </th>
             </tr>
             <tr>
@@ -34,7 +34,7 @@
                     Market cap
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.marketCap }}
+                    {{ customerDetails?.marketCap ? customerDetails?.marketCap : '--' }}
                 </th>
             </tr>
         </tbody>

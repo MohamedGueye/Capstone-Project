@@ -13,12 +13,16 @@ import { PrimaryBeneficiary } from '../models/primary-beneficiary.model';
 import { PrimaryBeneficiaryDetailsService } from '../service/primary-beneficiary-details.service';
 import { ContingentBeneficiaryDetailsService } from '../service/contingent-beneficiary-details.service';
 import { ContingentBeneficiary } from '../models/contingent-beneficiary.model';
+import { getAccountOverlayAndBannerError } from '../utils/account-error.utils';
+import { ACCOUNT_ERROR_TYPES, BENE_ERROR_TYPES } from '../constants/error-types.constants';
+import { AppError } from '../models/app-error.model';
+import { NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-account-root',
   standalone: true,
-  imports: [BeneficiaryComponent, CommoditiesComponent, BusinessesComponent, RealEstateComponent, StocksComponent],
+  imports: [BeneficiaryComponent, CommoditiesComponent, BusinessesComponent, RealEstateComponent, StocksComponent, OverlayComponent, NgIf],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss'
 })
@@ -26,6 +30,8 @@ export class AccountComponent {
   customerDetails: Customer | undefined;
   primaryBeneficiary: PrimaryBeneficiary | undefined;
   contingentBeneficiary: ContingentBeneficiary | undefined;
+  accountOverlayError?: AppError = undefined;
+  beneOverlayError?: AppError = undefined;
   constructor(private accountService: AccountService, 
     private primaryBeneficiaryService: PrimaryBeneficiaryDetailsService,
     private contingentBeneficiaryService: ContingentBeneficiaryDetailsService) {}
@@ -35,6 +41,13 @@ export class AccountComponent {
       this.accountService.retrieveCustomerDetails(searchedAccount).subscribe({
         next: async (data: Customer) => {
           this.customerDetails = data;
+        },
+        error: (error) => {
+          const errorType = getAccountOverlayAndBannerError(error, ACCOUNT_ERROR_TYPES);
+
+          if (error?.error?.status === 500) {
+            this.accountOverlayError = ACCOUNT_ERROR_TYPES[500];
+          }
         }
       })
       this.primaryBeneficiaryService.retrievePrimaryBeneficiaryDetails(searchedAccount).subscribe({
@@ -45,6 +58,13 @@ export class AccountComponent {
       this.contingentBeneficiaryService.retrieveContingentBeneficiaryDetails(searchedAccount).subscribe({
         next: async (data: ContingentBeneficiary) => {
           this.contingentBeneficiary = data;
+        },
+        error: (error) => {
+          const errorType = getAccountOverlayAndBannerError(error, BENE_ERROR_TYPES);
+
+          if (error?.error?.status === 500) {
+           this.beneOverlayError = BENE_ERROR_TYPES[500]; 
+          }
         }
       })
     }

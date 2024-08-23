@@ -10,7 +10,7 @@
                     Rental Unit
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.rentalUnit }}
+                    {{ customerDetails?.rentalUnit ? customerDetails?.rentalUnit : '--' }}
                 </th>
             </tr>
             <tr>
@@ -18,7 +18,7 @@
                     Commercial properties
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.commercialProperty }}
+                    {{ customerDetails?.commercialProperty ? customerDetails?.commercialProperty : '--'}}
                 </th>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                     Yearly property taxes
                 </th>
                 <th class="fw-bold pl-3">
-                    {{ customerDetails?.yearlyPropertyTax }}
+                    {{ customerDetails?.yearlyPropertyTax ? '$' + customerDetails?.yearlyPropertyTax : '--' }}
                 </th>
             </tr>
         </tbody>
