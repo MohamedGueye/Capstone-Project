@@ -12,6 +12,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { AccountComponent } from "./account/account.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule, provideHttpClient } from "@angular/common/http";
+import { AccountService } from "./account/account.service";
+import { PrimaryBeneficiaryDetailsService } from "./service/primary-beneficiary-details.service";
+import { ContingentBeneficiaryDetailsService } from "./service/contingent-beneficiary-details.service";
 
 @NgModule({
     declarations: [AppComponent],
@@ -25,8 +28,13 @@ import { HttpClientModule, provideHttpClient } from "@angular/common/http";
         RealEstateComponent,
         SearchBarComponent,
         StocksComponent,
+        AccountComponent
     ],
-    providers: [provideHttpClient()],
+    providers: [
+        AccountService, 
+        PrimaryBeneficiaryDetailsService, 
+        ContingentBeneficiaryDetailsService
+    ],
     bootstrap: [AppComponent],
     exports: [AppComponent],
 })

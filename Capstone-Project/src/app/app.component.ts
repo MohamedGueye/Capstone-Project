@@ -18,11 +18,18 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  title = 'Capstone-Project';
   @ViewChild(AccountComponent) accountComponent!: {
     onSearchUpdate: (value: string) => void;
   };
 
+  errorMessage?: string;
+
   onSearch(value: string) {
     this.accountComponent.onSearchUpdate(value);
+  }
+
+  onErrorUpdate(value: string) {
+    this.errorMessage = value;
   }
 }
